@@ -141,18 +141,6 @@ Station* charger_reseau(const char *filename) {
 }
 
 
-void afficher_reseau(Station *stations, int n) {
-    int i;
-    for (i = 0; i < n; i++) {
-        Arc *a = stations[i].adj;
-        printf("Station %d (%s) :", i, stations[i].nom);
-        while (a != NULL) {
-            printf(" -> %d(%d)", a->dest, a->temps);
-            a = a->suiv;
-        }
-        printf("\n");
-    }
-}
 
 /* ===== LIBERATION MEMOIRE ===== */
 
@@ -184,7 +172,6 @@ int charger_data(const char *filename) {
         return 1;
     }
 
-    afficher_reseau(reseau, nb_stations);
     liberer_reseau(reseau, nb_stations);
 
     return 0;
