@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
         
         // Quitter le programme
         if (choix == 0) {
-            printf("FIin.\n");
+            printf("Fin.\n");
             break;
         }
         
